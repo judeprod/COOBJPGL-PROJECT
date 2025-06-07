@@ -53,8 +53,9 @@
             </Label>
             <TableView fx:id="ViewTable" layoutY="79.0" prefHeight="449.0" prefWidth="335.0">
               <columns>
-                <TableColumn fx:id="Details" prefWidth="166.0" text="Details" />
-                <TableColumn fx:id="Cost" prefWidth="168.0" text="Cost" />
+                <TableColumn fx:id="RiderName" prefWidth="105.0" text="Driver" />
+                <TableColumn fx:id="LocationTable" prefWidth="120.0" text="Location" />
+                  <TableColumn fx:id="CostTable" prefWidth="109.0" text="Cost" />
               </columns>
             </TableView>
             <Label alignment="CENTER" layoutX="132.0" layoutY="34.0" prefHeight="40.0" prefWidth="71.0" text="Recent">
