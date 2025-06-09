@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane fx:id="savedhomeaddy" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button alignment="BASELINE_LEFT" layoutY="42.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="335.0" style="-fx-background-color: transparent;" text="Add Home">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@house-black-silhouette-without-door.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="savedschooladdy" alignment="BASELINE_LEFT" layoutY="74.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="335.0" style="-fx-background-color: transparent;" text="School">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@portfolio.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="savedschooladdy1" alignment="BASELINE_LEFT" layoutY="106.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="335.0" style="-fx-background-color: transparent;" text="Add New">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@portfolio.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fx:id="backbtn" fitHeight="24.0" fitWidth="23.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@backbuttonimg.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#aab2b9" height="190.0" layoutX="-72.0" layoutY="-149.0" opacity="0.16" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="407.0" />
+   </children>
+</Pane>
