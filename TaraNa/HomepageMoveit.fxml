@@ -47,7 +47,7 @@
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="MotoTaxtButton" layoutX="26.0" layoutY="157.0" minWidth="53.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="59.0" style="-fx-background-color: #FFD700; -fx-background-radius: 50px;" text="car.png">
+            <Button fx:id="MotoTaxiButton" layoutX="26.0" layoutY="157.0" minWidth="53.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="59.0" style="-fx-background-color: #FFD700; -fx-background-radius: 50px;" onAction="#MotoTaxiButtonClick" text="car.png">
                <graphic>
                   <ImageView fx:id="MotoTaxiButton" fitHeight="46.0" fitWidth="47.0" pickOnBounds="true">
                      <image>
@@ -68,17 +68,17 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="ActivityCenterButton" layoutX="14.0" layoutY="541.0" mnemonicParsing="false" style="-fx-background-color: #722F37;" text="Activity">
+            <Button fx:id="ActivityCenterButton" layoutX="14.0" layoutY="541.0" mnemonicParsing="false" style="-fx-background-color: #722F37;" onAction="#ActivityCenterButtonClick" text="Activity">
                <graphic>
                   <Icon content="HISTORY" />
                </graphic>
             </Button>
-            <Button fx:id="MessagesButton" layoutX="114.0" layoutY="541.0" mnemonicParsing="false" style="-fx-background-color: #722F37;" text="Messages">
+            <Button fx:id="MessagesButton" layoutX="114.0" layoutY="541.0" mnemonicParsing="false" style="-fx-background-color: #722F37;" onAction="#MessagesButtonClick" text="Messages">
                <graphic>
                   <Icon content="MESSAGE" />
                </graphic>
             </Button>
-            <Button fx:id="AccountButton" layoutX="232.0" layoutY="541.0" mnemonicParsing="false" style="-fx-background-color: #722F37;" text="Account">
+            <Button fx:id="AccountButton" layoutX="232.0" layoutY="541.0" mnemonicParsing="false" style="-fx-background-color: #722F37;" onAction="#AccountButtonClick" text="Account">
                <graphic>
                   <Icon content="ACCOUNT_CIRCLE" />
                </graphic>
