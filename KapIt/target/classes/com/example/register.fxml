@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:controller="com.example.SignUpController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="24.0" layoutY="55.0" text="Phone Number" textFill="#a4a1a1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="phareacode" layoutX="55.0" layoutY="83.0" text="+63" underline="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="phflag" fitHeight="30.0" fitWidth="25.0" layoutX="26.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@phflag.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="spphoneno" layoutX="90.0" layoutY="76.0" prefHeight="20.0" prefWidth="209.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 500px;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="nextbtn" layoutX="30.0" layoutY="504.0" mnemonicParsing="false" onAction="#nextbtnHandler" prefHeight="41.0" prefWidth="275.0" style="-fx-background-color: black; -fx-background-radius: 500px;" text="Next" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="26.0" layoutY="111.0" text="What Should we call you?" textFill="#a4a1a1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="uname" layoutX="30.0" layoutY="142.0" prefHeight="32.0" prefWidth="275.0" promptText="Name" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 500px;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="26.0" layoutY="179.0" text="Password" textFill="#a4a1a1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pword" layoutX="30.0" layoutY="209.0" prefHeight="32.0" prefWidth="275.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 500px;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="bookingbackbtn" alignment="TOP_LEFT" layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#bookingbackbtnHandler" style="-fx-background-color: white; -fx-background-radius: 900px;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@backbuttonimg.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</Pane>

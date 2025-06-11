@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #5e1916;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="com.example.SignUpController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #5e1916;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="moveitloginsign" layoutX="100.0" layoutY="153.0" text="MOVE IT" textFill="WHITE">
          <font>
@@ -24,7 +24,7 @@
             <Blend />
          </effect>
       </Button>
-      <Button fx:id="signupbtn" layoutX="30.0" layoutY="519.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="275.0" style="-fx-background-color: #d19999; -fx-background-radius: 500px;" text="Sign up">
+      <Button fx:id="signupbtn" layoutX="30.0" layoutY="519.0" mnemonicParsing="false" onAction="#signupbtnHandler" prefHeight="41.0" prefWidth="275.0" style="-fx-background-color: #d19999; -fx-background-radius: 500px;" text="Sign up">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

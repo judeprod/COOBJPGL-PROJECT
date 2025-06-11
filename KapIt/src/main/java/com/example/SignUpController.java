@@ -20,5 +20,8 @@ public class SignUpController {
     private void nextbtnHandler(ActionEvent event) throws IOException {
        App.setRoot("LoginMoveit"); // Replace "nextScreen" with your actual next FXML file name (without .fxml)
     }
+     @FXML
+    private void bookingbackbtnHandler(ActionEvent event) throws IOException {
+       App.setRoot("signup"); // Replace "nextScreen" with your actual next FXML file name (without .fxml)
+    }
 }
-
