@@ -76,7 +76,7 @@ public class LogInController {
                         alert.showAndWait();   
                         
                         // Load Home.fxml when login button is clicked
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource(".fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("HomepageMoveit.fxml"));
                         root = loader.load();
 
                         // Load stage and scene
