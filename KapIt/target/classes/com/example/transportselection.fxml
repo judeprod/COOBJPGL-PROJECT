@@ -9,19 +9,20 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<Pane fx:controller="com.example.TransportSelectionController"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="pickuptf" layoutX="72.0" layoutY="33.0" prefHeight="35.0" prefWidth="232.0" promptText="Pick up at?" text="NU MANILA">
+      <TextField fx:id="pickuptf" layoutX="59.0" layoutY="33.0" prefHeight="35.0" prefWidth="262.0" promptText="Pick up at?" style="-fx-background-radius: 500px;" text="NU MANILA" editable="false">
          <font>
             <Font name="SansSerif Bold" size="13.0" />
          </font>
       </TextField>
-      <TextField fx:id="dropofftf" layoutX="72.0" layoutY="76.0" prefHeight="35.0" prefWidth="232.0" promptText="Where to?">
+      <TextField fx:id="dropofftf" layoutX="59.0" layoutY="76.0" prefHeight="35.0" prefWidth="262.0" promptText="Where to?" style="-fx-background-radius: 500px;">
          <font>
             <Font name="SansSerif Bold" size="13.0" />
          </font>
       </TextField>
-      <Button fx:id="backbuttonpd" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+      <Button fx:id="backbuttonpd" layoutX="14.0" layoutY="33.0" mnemonicParsing="false"  style="-fx-background-color: transparent;"> 
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -32,10 +33,8 @@
       </Button>
       <TableView fx:id="placestable" layoutX="7.0" layoutY="164.0" prefHeight="413.0" prefWidth="321.0">
         <columns>
-          <TableColumn fx:id="recentplacestable" prefWidth="320.0" resizable="false" />
+          <TableColumn fx:id="recentplacestable" prefWidth="320.0" resizable="false" text="Location" />
         </columns>
       </TableView>
-      <Button fx:id="recentbtn" layoutX="20.0" layoutY="124.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 200px;" text="Recent" />
-      <Button fx:id="savedbtn" layoutX="81.0" layoutY="124.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 200px;" text="Saved" />
    </children>
 </Pane>

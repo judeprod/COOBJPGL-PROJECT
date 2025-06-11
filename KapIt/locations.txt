@@ -1,0 +1,5 @@
+LRT 2 Doroteo Jose Rizal Ave Santa Cruz City Of Manila 1008 Metro Manila,67,"example\recto-nu.jpg"
+NU ANNEX II Concepcion Aguila St San Miguel City Of Manila 1008 Metro Manila,50,
+JX5R+8J7 UST Overpass Sampaloc City Of Manila 1008 Metro Manila,59,
+SM San Lazaro Felix Huertas Corner 1003 Lacson Ave Santa Cruz City Of Manila,55,
+Beautiful Blossoms Ph  Dangwa 1633F Dimasalang St Santa Cruz Sta Cruz 1008 Metro Manila,57,
