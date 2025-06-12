@@ -24,8 +24,5 @@ public class SignUpController {
     private void bookingbackbtnHandler(ActionEvent event) throws IOException {
        App.setRoot("signup"); // Replace "nextScreen" with your actual next FXML file name (without .fxml)
     }
-    @FXML
-    private void backbuttonpdHandler(ActionEvent event) throws IOException {
-       App.setRoot("bookingpage"); // Replace "nextScreen" with your actual next FXML file name (without .fxml)
-    }
+    
 }

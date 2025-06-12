@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,6 +28,11 @@ public class TransportSelectionController{
 
     @FXML 
     private TableColumn<Location, String> recentplacestable;
+
+    @FXML
+    private void backbuttonpdHandler(ActionEvent event) throws IOException {
+       App.setRoot("bookingpage");
+    }
 
     private ObservableList<Location> allLocations = FXCollections.observableArrayList();
     
