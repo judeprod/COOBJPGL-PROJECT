@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="com.example.BookingPageController"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="maps" fitHeight="484.0" fitWidth="336.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -55,7 +55,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="bookingbackbtn" alignment="TOP_LEFT" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 900px;">
+      <Button fx:id="bookingbackbtn" alignment="TOP_LEFT" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#bookingbackbtnHandler" style="-fx-background-color: white; -fx-background-radius: 900px;">
          <graphic>
             <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -64,7 +64,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label fx:id="dropoffLabel" layoutX="143.0" layoutY="424.0" text="DropOff">
+      <Label fx:id="dropoffLabel" layoutX="100.0" layoutY="425.0" text="DropOff">
          <font>
             <Font size="13.0" />
          </font>

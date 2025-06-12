@@ -1,7 +1,6 @@
 package com.example;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -46,20 +45,27 @@ public class TransportSelectionController{
     }
 
     private void loadLocationsFromFile() {
-        File file = new File("locations.txt");
+    File file = new File("locations.txt");
 
-        if (file.exists()) {
-            try (Scanner scanner = new Scanner(file)) {
-                while (scanner.hasNextLine()) {
-                    String line = scanner.nextLine();
-                    System.out.println("Loaded line: " + line);
-                    allLocations.add(new Location(line));
+    if (file.exists()) {
+        try (Scanner scanner = new Scanner(file)) {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] parts = line.split(",");
+
+                if (parts.length >= 2) { // accept 2 or 3 parts
+                    String loc = parts[0].trim();
+                    int price = Integer.parseInt(parts[1].trim());
+                    String imageName = (parts.length == 3) ? parts[2].trim() : ""; // handle missing image
+
+                    allLocations.add(new Location(loc, price, imageName));
                 }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+}
     private void setupRowClick() {
         placestable.setOnMouseClicked(event -> {
         if (event.getClickCount() == 2) { // double-click (you can use 1 for single click)
@@ -77,7 +83,7 @@ private void goToBookingPage(Location selectedLocation) {
 
         // Get the controller and pass data
         BookingPageController controller = loader.getController();
-        controller.setDropoffLocation(selectedLocation.getLoc());
+        controller.setLocation(selectedLocation);
 
         // Set new scene
         Stage stage = (Stage) placestable.getScene().getWindow();
