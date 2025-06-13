@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ActivitycenterController">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="132.0" layoutY="14.0" prefHeight="40.0" prefWidth="71.0" text="Activity">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="ViewTable" layoutY="79.0" prefHeight="449.0" prefWidth="335.0">
+               <columns>
+                  <TableColumn fx:id="RiderName" prefWidth="93.0" text="Rider" />
+                  <TableColumn fx:id="LocationTable" prefWidth="151.0" text="Location" />
+                  <TableColumn fx:id="CostTable" prefWidth="90.0" text="Cost" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="132.0" layoutY="34.0" prefHeight="40.0" prefWidth="71.0" text="Recent">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="HomeButton" layoutX="126.0" layoutY="541.0" mnemonicParsing="false" onAction="#gohome" prefWidth="83.0" style="-fx-background-color: #722F37;" text="Home" textFill="WHITE" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
