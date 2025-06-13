@@ -87,7 +87,7 @@ public class phoneregisterController {
             alert.setContentText("You have created a new account!");
             alert.showAndWait();
             
-            App.setRoot("firstscene");
+            App.setRoot("Homepage");
         
 
         } catch (IOException e) {
