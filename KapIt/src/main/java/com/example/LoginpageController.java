@@ -93,18 +93,10 @@ System.out.println("File exists? " + accountsfile.exists());
                             alert.showAndWait();
                             break;
 
-                        } else {
-
-                    Alert alert = new Alert(AlertType.INFORMATION);
-                    alert.setTitle("Try Again");
-                    alert.setHeaderText("Account does not exist");
-                    alert.setContentText("Please enter your name and password");
-                    alert.showAndWait();
-                    break; 
-
+                    }
                         
-            
-                }
+                
+                
             }
         }
     }    
