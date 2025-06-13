@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -29,9 +30,13 @@ public class TransportSelectionController{
     private TableColumn<Location, String> recentplacestable;
 
     @FXML
-    private void backbuttonpdHandler(ActionEvent event) throws IOException {
-       App.setRoot("bookingpage");
-    }
+    private void backbuttonpdHandler(ActionEvent event) throws IOException { 
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("transport.fxml"));
+        Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                    stage.show();
+}
 
     private ObservableList<Location> allLocations = FXCollections.observableArrayList();
     

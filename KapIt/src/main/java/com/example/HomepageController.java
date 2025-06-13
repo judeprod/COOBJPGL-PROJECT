@@ -5,17 +5,17 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.scene.Node;
 
 public class HomepageController {
 
 
-    @FXML
-    private Button ActivityCenterButton;
+@FXML
+private Button ActivityCenterButton;
 
 @FXML
 private void Activitycenterhandle(ActionEvent event) throws IOException {
@@ -25,6 +25,23 @@ Parent root = loader.load();
 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 stage.setScene(new Scene(root));
 stage.show();
+}
+
+@FXML
+private void MotoTaxiButtonHandler(ActionEvent event) throws IOException { 
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("transport.fxml"));
+        Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                    stage.show();
+}
+@FXML
+private void AccountButtonHandler(ActionEvent event) throws IOException { 
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("editaccount.fxml"));
+        Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                    stage.show();
 }
 
     

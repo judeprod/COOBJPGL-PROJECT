@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="com.example.HomepageController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="95.0" fitWidth="103.0" layoutX="120.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -53,11 +52,16 @@
             <Image url="@backbuttonimg.png" />
          </image>
       </ImageView>
-      <Button layoutX="122.0" layoutY="487.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Log Out" textFill="#574a4a">
+      <Button fx:id="Logout" layoutX="122.0" layoutY="487.0" mnemonicParsing="false" onAction="#LogoutHandler" style="-fx-background-color: transparent;" text="Log Out" textFill="#574a4a">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <Label layoutX="161.0" layoutY="526.0" text="V1" textFill="#b9aaaa" />
+      <Button fx:id="DeleteAcc" layoutX="111.0" layoutY="561.0" mnemonicParsing="false" onAction="#DeleteAccHandler" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: transparent;" text="Delete Account" textFill="#8d7f7f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

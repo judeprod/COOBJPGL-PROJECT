@@ -1,3 +1,0 @@
-0976100200, 12345, Elizer
-0917123456, NationalU, Aaron
-0916098765, SampalocM, Jude
