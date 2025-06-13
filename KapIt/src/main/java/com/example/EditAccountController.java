@@ -83,10 +83,13 @@ private void LogoutHandler(ActionEvent event) {
             Parent root = loader.load();
             Scene scene = new Scene(root);
 
+            firstsceneController controller = loader.getController();
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle("Login");
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

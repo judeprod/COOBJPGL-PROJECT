@@ -2,7 +2,7 @@ package com.example;
 
 public class Location {
 
-        private String loc;
+    private String loc;
     private int bookingprice;
     private String maps;
 

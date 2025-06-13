@@ -20,7 +20,7 @@
             </Label>
             <TableView fx:id="ViewTable" layoutY="79.0" prefHeight="449.0" prefWidth="335.0">
                <columns>
-                  <TableColumn fx:id="RiderName" prefWidth="93.0" text="Rider" />
+                  <TableColumn fx:id="TimeTable" prefWidth="93.0" text="Time" />
                   <TableColumn fx:id="LocationTable" prefWidth="151.0" text="Location" />
                   <TableColumn fx:id="CostTable" prefWidth="90.0" text="Cost" />
                </columns>
