@@ -131,7 +131,7 @@ private String formatPhoneNumber(String digits) {
         return false;
     }
 
-        if (!phonenumber.matches("\\d{10,11}")) {
+        if (!phonenumber.matches("\\d{10}")) {
         showAlert("Invalid Phone Number", "Phone number should be 10 or 11 digits", "Numbers only.");
         return false;
     }

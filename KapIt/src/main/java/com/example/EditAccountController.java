@@ -83,7 +83,7 @@ public class EditAccountController {
             if (!newValue.matches("\\d*")) {
                 Phonenumbertextfield.setText(newValue.replaceAll("[^\\d]", ""));
             }
-            if (newValue.length() > 11) {
+            if (newValue.length() > 10) {
                 Phonenumbertextfield.setText(newValue.substring(0, 11));
             }
         });
