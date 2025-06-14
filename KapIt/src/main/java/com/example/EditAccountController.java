@@ -43,6 +43,16 @@ public class EditAccountController {
     private Label phareacode;
 
     @FXML
+    private void switchtofirstscene(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("firstscene.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Login");
+        stage.show();
+    }
+
+    @FXML
     private void initialize() {
         loadAccountInfo();
     }
@@ -79,17 +89,7 @@ private void LogoutHandler(ActionEvent event) {
     Optional<ButtonType> result = alert.showAndWait();
     if (result.isPresent() && result.get() == ButtonType.OK) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("firstscene.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-
-            firstsceneController controller = loader.getController();
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setTitle("Login");
-            stage.show();
-
+            switchtofirstscene(event);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -152,13 +152,13 @@ private void backbtnaccHandler(ActionEvent event) {
         alert.setContentText("User '" + targetUsername + "' has been deleted.");
         alert.showAndWait();
 
-        LoginpageController.user = null;
-        try {
-            App.setRoot("firstscene");
+          try {
+            switchtofirstscene(event);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     private void savebtnHandler(ActionEvent event) {
