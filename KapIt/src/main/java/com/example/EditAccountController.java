@@ -55,6 +55,7 @@ public class EditAccountController {
     @FXML
     private void initialize() {
         loadAccountInfo();
+        restrictPhoneNumberInput();
     }
 
     private void loadAccountInfo() {
@@ -76,10 +77,35 @@ public class EditAccountController {
             System.out.println("Error reading account info: " + e.getMessage());
         }
     }
+    private void restrictPhoneNumberInput() {
+        // Only digits in phone number
+        Phonenumbertextfield.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                Phonenumbertextfield.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+            if (newValue.length() > 11) {
+                Phonenumbertextfield.setText(newValue.substring(0, 11));
+            }
+        });
+
+        // Limit name to 30 characters
+        Newnametextfield.textProperty().addListener((obs, oldValue, newValue) -> {
+            if (newValue.length() > 30) {
+                Newnametextfield.setText(oldValue);
+            }
+        });
+
+        // Limit password to 20 characters
+        Newpasswordtextfield.textProperty().addListener((obs, oldValue, newValue) -> {
+            if (newValue.length() > 20) {
+                Newpasswordtextfield.setText(oldValue);
+            }
+        });
+    }
 
     @FXML
-private void LogoutHandler(ActionEvent event) {
-    System.out.println("🔸 LogoutHandler triggered");  // debug print
+    private void LogoutHandler(ActionEvent event) {
+    System.out.println("Logging Out...");
 
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Log Out");
@@ -160,7 +186,7 @@ private void backbtnaccHandler(ActionEvent event) {
     }
 
 
-    @FXML
+     @FXML
     private void savebtnHandler(ActionEvent event) {
         User user = LoginpageController.user;
         if (user == null) return;
@@ -169,8 +195,23 @@ private void backbtnaccHandler(ActionEvent event) {
         String newPassword = Newpasswordtextfield.getText().trim();
         String newPhone = Phonenumbertextfield.getText().trim();
 
+            if (!newUsername.matches("[a-zA-Z ]{3,30}")) {
+            showAlert("Invalid Name", "Name should only contain letters and spaces", "Character length must be 3 to 30.");
+            return;
+    }
+
+            if (!newPhone.matches("\\d{10,11}")) {
+            showAlert("Invalid Phone Number", "Phone number must be 10 or 11 digits.", "Numbers only.");
+            return;
+    }
+
+            if (!newPassword.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$")) {
+            showAlert("Weak Password", "Password must be at least 8 characters long", "Include 1 uppercase, 1 lowercase, and 1 number.");
+            return;
+    }
+
         if (newUsername.isEmpty() || newPassword.isEmpty() || newPhone.isEmpty()) {
-            showAlert("Missing Fields", "Please fill in all the fields.");
+            showAlert("Missing Fields", "Please fill in all the fields.", "");
             return;
         }
 
@@ -204,19 +245,18 @@ private void backbtnaccHandler(ActionEvent event) {
             return;
         }
 
-        
         user.setUsername(newUsername);
         user.setPassword(newPassword);
         user.setPhone(newPhone);
 
-        showAlert("Success", "Account updated successfully.");
+        showAlert("Success", "Account updated successfully.", "");
     }
 
-    private void showAlert(String header, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information");
-        alert.setHeaderText(header);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
+    private void showAlert(String title, String header, String content) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(header);
+    alert.setContentText(content);
+    alert.showAndWait();
+}
 }
