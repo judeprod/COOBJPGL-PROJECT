@@ -33,7 +33,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Button fx:id="bookbtn" layoutX="15.0" layoutY="527.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="305.0" style="-fx-background-color: black; -fx-background-radius: 500px;" text="Book" textFill="WHITE">
+      <Button fx:id="bookbtn" layoutX="15.0" layoutY="527.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="305.0" style="-fx-background-color: black; -fx-background-radius: 500px;" text="Book" textFill="WHITE" onAction="#finalbookinghandler">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
