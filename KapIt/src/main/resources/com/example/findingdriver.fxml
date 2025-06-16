@@ -8,24 +8,27 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Rectangle?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #5e1916;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FindingdriverController">
-   <children>
-      <ProgressBar fx:id="progressIndicator" layoutX="61.0" layoutY="458.0" prefHeight="19.0" prefWidth="217.0" style="-fx-accent: lime;" />
-      <Label fx:id="bookingsign" layoutX="28.0" layoutY="255.0" prefHeight="45.0" prefWidth="281.0" text="Looking For A Rider" textFill="WHITE">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color:rgb(255, 255, 255);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FindingdriverController">
+  <children>
+      <ProgressBar layoutY="144.0" opacity="0.1" prefHeight="459.0" prefWidth="335.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e1916" height="150.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="335.0" />
+      <Label fx:id="bookingsign" alignment="CENTER" layoutX="43.0" layoutY="53.0" prefHeight="45.0" prefWidth="250.0" text="Looking For A Rider" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="30.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="homebtn" onAction="#homedriverHandler"  alignment="CENTER" contentDisplay="TOP" layoutX="131.0" layoutY="507.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" style="-fx-background-color: black; -fx-background-radius: 500;" text="Cancel" textFill="WHITE">
+      <Button fx:id="homebtn" onAction="#homedriverHandler" alignment="CENTER" contentDisplay="TOP" layoutX="129.0" layoutY="507.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" style="-fx-background-color: black; -fx-background-radius: 500;" text="Cancel" textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="81.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="75.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@rider.gif" />
          </image>
       </ImageView>
    </children>
+
 </Pane>

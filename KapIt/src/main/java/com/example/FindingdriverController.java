@@ -6,12 +6,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,15 +20,17 @@ import javafx.stage.Stage;
 public class FindingdriverController {
 
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+private Stage stage;
+private Scene scene;
+private Parent root;
 
 @FXML
 private Label dropoffLabel;
 
 @FXML
 private Label bookingprice;
+
+
 
     
 public void homedriverHandler(ActionEvent event) throws IOException {
