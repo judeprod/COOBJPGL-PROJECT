@@ -1,1 +1,5 @@
-03:54 PM,LRT 2 Doroteo,₱67
+02:01 PM,LRT 2 Doroteo,₱67
+02:01 PM,NU ANNEX II,₱50
+02:01 PM,UST Overpass Sampaloc,₱59
+02:01 PM,SM San Lazaro,₱55
+02:01 PM,Dangwa Beautiful Blossoms,₱57
