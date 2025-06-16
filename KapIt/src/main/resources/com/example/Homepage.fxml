@@ -22,20 +22,28 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#722f37" height="131.0" stroke="BLACK" strokeType="INSIDE" width="337.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e1916" height="131.0" stroke="BLACK" strokeType="INSIDE" width="337.0" />
             <Label alignment="CENTER" layoutX="31.0" layoutY="215.0" text="MotoTaxi" />
             <Label layoutX="28.0" layoutY="35.0" style="-fx-text-fill: white;" text="Welcome to KapIt" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="29.0" layoutY="62.0" prefHeight="28.0" prefWidth="266.0" style="-fx-text-fill: white;" text="Wherever you're going, let's get you there" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="ActivityCenterButton" layoutX="14.0" layoutY="541.0" mnemonicParsing="false" onAction="#Activitycenterhandle" prefHeight="40.0" prefWidth="137.0" style="-fx-background-color: #722F37;" text="Activity" textFill="WHITE" />
-            <Button fx:id="AccountButton" layoutX="173.0" layoutY="541.0" mnemonicParsing="false" onAction="#AccountButtonHandler" prefHeight="40.0" prefWidth="148.0" style="-fx-background-color: #722F37;" text="Account" textFill="WHITE" />
+            <Label layoutX="29.0" layoutY="62.0" prefHeight="28.0" prefWidth="266.0" style="-fx-text-fill: white;" text="Wherever you're going, Let's get you there." textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="ActivityCenterButton" layoutX="14.0" layoutY="541.0" mnemonicParsing="false" onAction="#Activitycenterhandle" prefHeight="40.0" prefWidth="137.0" style="-fx-background-color: #5e1916;" text="Activity" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>   
+            <Button fx:id="AccountButton" layoutX="173.0" layoutY="541.0" mnemonicParsing="false" onAction="#AccountButtonHandler" prefHeight="40.0" prefWidth="148.0" style="-fx-background-color: #5e1916;" text="Account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+             </Button>  
          </children>
       </Pane>
    </children>
