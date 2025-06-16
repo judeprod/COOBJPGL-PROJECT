@@ -3,3 +3,4 @@
 02:01 PM,UST Overpass Sampaloc,₱59
 02:01 PM,SM San Lazaro,₱55
 02:01 PM,Dangwa Beautiful Blossoms,₱57
+03:32 PM,SM San Lazaro,₱55
