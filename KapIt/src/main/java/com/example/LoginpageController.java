@@ -20,7 +20,11 @@ public class LoginpageController {
 
     @FXML
     public void handleBack(ActionEvent event) throws IOException {
-        App.setRoot("firstscene");
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("firstscene.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+                stage.show();
     }
     
     @FXML
