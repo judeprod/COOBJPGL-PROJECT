@@ -1,6 +1,7 @@
 package com.example;
 
 import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +13,9 @@ import javafx.stage.Stage;
 public class firstsceneController {
 
     @FXML
-        private void switchToLoginpage(ActionEvent event) throws IOException {
+    private void switchToLoginpage(ActionEvent event) throws IOException {
         //App.setRoot("Loginpage");
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("Loginpage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Loginpage.fxml"));
         Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));

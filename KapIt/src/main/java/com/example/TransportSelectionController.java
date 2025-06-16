@@ -39,7 +39,10 @@ public class TransportSelectionController{
 }
 
     private ObservableList<Location> allLocations = FXCollections.observableArrayList();
-    
+    //preset location
+    private String presetLocation = null;
+
+
     @FXML
     public void initialize() {
         // Load locations from file and shows them
@@ -47,7 +50,8 @@ public class TransportSelectionController{
         setupTable();
         setupSearch();
         setupRowClick();
-    }
+}
+    
 
     private void loadLocationsFromFile() {
     File file = new File("locations.txt");
@@ -120,5 +124,6 @@ private void goToBookingPage(Location selectedLocation) {
         }
     }
 }
+
 
 
