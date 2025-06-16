@@ -22,7 +22,11 @@ import javafx.stage.Stage;
 
 public class BookingPageController {
 
-        ObservableList<ACInfo> mylist = FXCollections.observableArrayList();
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    ObservableList<ACInfo> mylist = FXCollections.observableArrayList();
 
     @FXML
     private Label dropoffLabel; // or TextField, whatever you're using
@@ -65,13 +69,23 @@ public class BookingPageController {
             mylist.add(new ACInfo(formattedTime, location, cost));
 
             System.out.println("Booking saved to ActivityCenter.txt");
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("LookingforRiders.fxml"));
+                    root = loader.load();
+                    // Load stage and scene
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        
    }
-
-
-
 
     private String dropoffLocation;
 
