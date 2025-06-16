@@ -49,6 +49,7 @@ public class BookingPageController {
     @FXML
     private void finalbookinghandler(ActionEvent event) {
 
+
     LocalTime currentTime = LocalTime.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
     String formattedTime = currentTime.format(formatter);
@@ -65,6 +66,15 @@ public class BookingPageController {
             mylist.add(new ACInfo(formattedTime, location, cost));
 
             System.out.println("Booking saved to ActivityCenter.txt");
+ 
+        // find rider
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("findingdriver.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
