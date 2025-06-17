@@ -55,15 +55,6 @@
                </font>
             </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e1916" height="84.0" layoutX="-6.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="341.0" />
-            <Button fx:id="homebutton" onAction="#lastbuttonHandle" alignment="CENTER" layoutX="147.0" layoutY="539.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="34.0" style="-fx-background-color: transparent;">
-               <graphic>
-                  <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@house-black-silhouette-without-door.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
             <Label fx:id="locationLabel" alignment="CENTER" layoutX="164.0" layoutY="458.0" prefHeight="20.0" prefWidth="141.0" style="-fx-text-fill: #b2b2b2;" text="(Location)" textFill="#b2b2b2">
                <font>
                   <Font name="System Bold" size="14.0" />
