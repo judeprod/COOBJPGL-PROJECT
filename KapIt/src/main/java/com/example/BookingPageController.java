@@ -21,6 +21,8 @@ import javafx.stage.Stage;
 
 public class BookingPageController {
 
+    
+
     public static String latestBookedLocation;
 
         ObservableList<ACInfo> mylist = FXCollections.observableArrayList();
@@ -33,6 +35,8 @@ public class BookingPageController {
 
     @FXML
     private ImageView maps;
+
+     private Location currentLocation;
 
     @FXML
     private void bookingbackbtnHandler(ActionEvent event) {
@@ -57,7 +61,10 @@ public class BookingPageController {
 
         String location = dropoffLabel.getText();
         String cost = bookingprice.getText();
+        String mapFilePath = currentLocation.getMaps(); 
         latestBookedLocation = location;
+
+        
 
         // Write to file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("ActivityCenter.txt", true))) {
@@ -72,6 +79,10 @@ public class BookingPageController {
         // find rider
             FXMLLoader loader = new FXMLLoader(getClass().getResource("findingdriver.fxml"));
             Parent root = loader.load();
+
+            FindingdriverController controller = loader.getController();
+            controller.setBookingInfo(location, cost, mapFilePath);
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
@@ -85,25 +96,21 @@ public class BookingPageController {
 
 
 
-    private String dropoffLocation;
+ public void setLocation(Location location) {
+        currentLocation = location;  // ✅ STORE the Location object for later
 
-    public void setDropoffLocation(String location) {
-        dropoffLabel.setText(location);
-    }
-    public void setLocation(Location location) {
         dropoffLabel.setText(location.getTitle()); 
         bookingprice.setText("₱" + location.getBprice());
 
-        // Load image if available
         if (location.getMaps() != null && !location.getMaps().isEmpty()) {
             File imageFile = new File(location.getMaps());
             if (imageFile.exists()) {
                 maps.setImage(new Image(imageFile.toURI().toString()));
             } else {
-                maps.setImage(null); // Or set a placeholder
+                maps.setImage(null);
             }
         } else {
-            maps.setImage(null); // No image available
+            maps.setImage(null);
         }
     }
 }

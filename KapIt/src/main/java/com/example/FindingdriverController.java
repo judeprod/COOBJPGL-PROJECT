@@ -20,6 +20,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class FindingdriverController {
@@ -29,6 +31,7 @@ private Stage stage;
 private Scene scene;
 private Parent root;
 
+
 @FXML
 private Label dropoffLabel;
 
@@ -37,6 +40,50 @@ private Label bookingprice;
 
 @FXML
 private Button homebtn;
+
+@FXML
+private Label locationLabel;
+
+@FXML
+private Label priceLabel;
+
+@FXML
+private ImageView maps;
+
+private Location currentLocation;
+
+    public void setData(Location location) {
+        this.currentLocation = location; // store location if you need it later
+        dropoffLabel.setText(location.getLoc());
+        bookingprice.setText("₱" + location.getBprice());
+
+        if (location.getMaps() != null && !location.getMaps().isEmpty()) {
+            File imageFile = new File(location.getMaps());
+            if (imageFile.exists()) {
+                maps.setImage(new Image(imageFile.toURI().toString()));
+            } else {
+                maps.setImage(null);
+            }
+        } else {
+            maps.setImage(null);
+        }
+    }
+
+        public void setBookingInfo(String location, String price, String mapPath) {
+        locationLabel.setText(location);
+        priceLabel.setText(price);
+
+        if (mapPath != null && !mapPath.isEmpty()) {
+            File imageFile = new File(mapPath);
+            if (imageFile.exists()) {
+                maps.setImage(new Image(imageFile.toURI().toString()));
+            } else {
+                maps.setImage(null);  // or set placeholder
+            }
+        } else {
+            maps.setImage(null);
+        }
+    }
 
 
 // Timer

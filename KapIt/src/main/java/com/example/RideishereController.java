@@ -9,6 +9,6 @@ public class RideishereController {
     private Label locationLabel;
 
     public void setDropoffLocation(String location) {
-        locationLabel.setText(" " + location);
+        locationLabel.setText(location);
     }
 }
