@@ -11,27 +11,24 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.effect.ColorAdjust?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #5e1916;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.RideishereController">
-   <children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.RideishereController">
       <Pane prefHeight="614.0" prefWidth="348.0">
-         <children>
+                  <children>
             <ProgressBar layoutX="-4.0" layoutY="411.0" prefHeight="190.0" prefWidth="341.0" style="-fx-accent: 4bb3fd; -fx-opacity: 0.1;" />
-            <Label fx:id="ridername" layoutX="73.0" layoutY="498.0" prefHeight="20.0" prefWidth="139.0" style="-fx-text-fill: black;" text="Juan Dela Cruz • 5 " textFill="#b2b2b2">
+            <Label layoutX="73.0" layoutY="499.0" prefHeight="20.0" prefWidth="139.0" style="-fx-text-fill: black;" text="Juan Dela Cruz • 5 " textFill="#b2b2b2">
                <font>
                   <Font size="14.0" />
-               </font>
-               </Label>
-            <Label fx:id="timer" layoutX="33.0" layoutY="453.0" prefHeight="20.0" prefWidth="271.0" style="-fx-text-fill: #b2b2b2;" text="Driver is here                Drop off in 10 sec" textFill="#b2b2b2">
+               </font></Label>
+            <Label alignment="CENTER" layoutX="33.0" layoutY="430.0" prefHeight="20.0" prefWidth="271.0" style="-fx-text-fill: #b2b2b2;" text="Driver is here" textFill="#b2b2b2">
                <font>
                   <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
+               </font></Label>
             <ImageView fitHeight="338.0" fitWidth="334.0" layoutX="1.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@graymap.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="189.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="189.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@star.png" />
                </image>
@@ -39,7 +36,7 @@
                   <Bloom threshold="0.78" />
                </effect>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="31.0" layoutX="35.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="31.0" layoutX="35.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@cm-isometric-biker-clipart-xl.png" />
                </image>
@@ -52,13 +49,33 @@
                   <ColorAdjust hue="0.75" saturation="1.0" />
                </effect>
             </ImageView>
-            <Label alignment="CENTER" layoutX="225.0" layoutY="498.0" prefHeight="20.0" prefWidth="79.0" style="-fx-text-fill: black;" text="Suzuki XR" textFill="#b2b2b2">
+            <Label alignment="CENTER" layoutX="225.0" layoutY="499.0" prefHeight="20.0" prefWidth="79.0" style="-fx-text-fill: black;" text="Suzuki XR" textFill="#b2b2b2">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e1916" height="84.0" layoutX="-6.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="341.0" />
+            <Button alignment="CENTER" layoutX="147.0" layoutY="539.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="34.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fx:id="homebutton" fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@house-black-silhouette-without-door.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="locationLabel" alignment="CENTER" layoutX="164.0" layoutY="458.0" prefHeight="20.0" prefWidth="141.0" style="-fx-text-fill: #b2b2b2;" text="(Location)" textFill="#b2b2b2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="dropoffat" layoutX="39.0" layoutY="458.0" prefHeight="20.0" prefWidth="80.0" style="-fx-text-fill: #b2b2b2;" text="Drop off at" textFill="#b2b2b2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
+
       </Pane>
-   </children>
+
 </Pane>

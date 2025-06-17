@@ -6,7 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +20,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class BookingPageController {
+
+    public static String latestBookedLocation;
 
         ObservableList<ACInfo> mylist = FXCollections.observableArrayList();
 
@@ -56,6 +57,7 @@ public class BookingPageController {
 
         String location = dropoffLabel.getText();
         String cost = bookingprice.getText();
+        latestBookedLocation = location;
 
         // Write to file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("ActivityCenter.txt", true))) {
