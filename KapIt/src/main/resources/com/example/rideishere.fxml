@@ -55,9 +55,9 @@
                </font>
             </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e1916" height="84.0" layoutX="-6.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="341.0" />
-            <Button alignment="CENTER" layoutX="147.0" layoutY="539.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="34.0" style="-fx-background-color: transparent;">
+            <Button fx:id="homebutton" onAction="#lastbuttonHandle" alignment="CENTER" layoutX="147.0" layoutY="539.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="34.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fx:id="homebutton" fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@house-black-silhouette-without-door.png" />
                      </image>
