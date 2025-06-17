@@ -12,21 +12,37 @@
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.LoginpageController"
       prefHeight="600.0" prefWidth="335.0">
 
-    <center>
-        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="73.0"
-                        text="Back" textFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 500px;" fx:id="BackButton" onAction="#handleBack" />
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="BackButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="33.0" prefWidth="73.0" style="-fx-background-color: #000000; -fx-background-radius: 100px;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="40.0" layoutY="83.0" prefHeight="14.0" prefWidth="75.0" style="-fx-text-fill: #b2b2b2;" text="Username" textFill="#b2b2b2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="40.0" layoutY="154.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: #b2b2b2;" text="Password" textFill="#b2b2b2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <TextField fx:id="nametextfield" layoutX="40.0" layoutY="107.0" prefHeight="25.0" prefWidth="251.0" promptText="Username" style="-fx-border-color: black; -fx-background-color: transparent; -fx-border-radius: 500;">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Button fx:id="loginButton" layoutX="38.0" layoutY="494.0" mnemonicParsing="false" onAction="#loginButtonHandler" prefHeight="39.0" prefWidth="260.0" style="-fx-background-color: #000000; -fx-background-radius: 100px;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <PasswordField fx:id="passwordtextfield" layoutX="40.0" layoutY="178.0" prefHeight="25.0" prefWidth="251.0" promptText="Password" style="-fx-border-color: black; -fx-background-color: transparent; -fx-border-radius: 500;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </Pane>
+   </center>
 
-                <Label layoutX="46.0" layoutY="113.0" text="Username" />
-                <Label layoutX="46.0" layoutY="153.0" text="Password" />
-
-                <TextField fx:id="nametextfield" layoutX="139.0" layoutY="109.0" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 500px;"/>
-                <PasswordField fx:id="passwordtextfield" layoutX="139.0" layoutY="149.0" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 500px;"/>
-
-                <Button fx:id="loginButton" layoutX="38.0" layoutY="494.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="260.0"
-                        text="Login" textFill="WHITE" style="-fx-background-color: black; -fx-background-radius: 500px;" onAction="#loginButtonHandler"/>
-            </children>
-        </Pane>
-    </center>
 </BorderPane>

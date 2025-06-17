@@ -6,27 +6,31 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.util.Duration;
+import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class FindingdriverController {
 
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+private Stage stage;
+private Scene scene;
+private Parent root;
+
 
 @FXML
 private Label dropoffLabel;
@@ -34,9 +38,121 @@ private Label dropoffLabel;
 @FXML
 private Label bookingprice;
 
+@FXML
+private Button homebtn;
+
+@FXML
+private Label locationLabel;
+
+@FXML
+private Label priceLabel;
+
+@FXML
+private ImageView maps;
+
+private Location currentLocation;
+
+    public void setData(Location location) {
+        this.currentLocation = location; // store location if you need it later
+        dropoffLabel.setText(location.getLoc());
+        bookingprice.setText("₱" + location.getBprice());
+
+        if (location.getMaps() != null && !location.getMaps().isEmpty()) {
+            File imageFile = new File(location.getMaps());
+            if (imageFile.exists()) {
+                maps.setImage(new Image(imageFile.toURI().toString()));
+            } else {
+                maps.setImage(null);
+            }
+        } else {
+            maps.setImage(null);
+        }
+    }
+
+        public void setBookingInfo(String location, String price, String mapPath) {
+        locationLabel.setText(location);
+        priceLabel.setText(price);
+
+        if (mapPath != null && !mapPath.isEmpty()) {
+            File imageFile = new File(mapPath);
+            if (imageFile.exists()) {
+                maps.setImage(new Image(imageFile.toURI().toString()));
+            } else {
+                maps.setImage(null);  // or set placeholder
+            }
+        } else {
+            maps.setImage(null);
+        }
+    }
+
+
+// Timer
+   private PauseTransition timer;
+    private Timeline countdownTimeline;
+    private int secondsRemaining = 5;
+
+    @FXML
+    public void initialize() {
+        startCountdownVisualization();
+        startTimer();
+    }
+
+    private void startTimer() {
+        timer = new PauseTransition(Duration.seconds(5));
+        timer.setOnFinished(event -> {
+            stopCountdownVisualization();  // stop visualization when timer finishes
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("rideishere.fxml"));
+                Parent root = loader.load();
+
+                // Get controller
+                RideishereController rideishereController = loader.getController();
+                // Pass location from BookingPageController
+                rideishereController.setDropoffLocation(BookingPageController.latestBookedLocation);
+
+
+                Stage stage = (Stage) homebtn.getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        timer.play();
+    }
+
+    private void startCountdownVisualization() {
+        System.out.println("Waiting for driver...");
+        countdownTimeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            System.out.println("Seconds remaining: " + secondsRemaining);
+            secondsRemaining--;
+            if (secondsRemaining < 0) {
+                countdownTimeline.stop();
+            }
+        }));
+        countdownTimeline.setCycleCount(secondsRemaining + 1);
+        countdownTimeline.play();
+    }
+
+    private void stopCountdownVisualization() {
+        if (countdownTimeline != null) {
+            countdownTimeline.stop();
+        }
+    }
+
+    // Cancel Button
     
 public void homedriverHandler(ActionEvent event) throws IOException {
     System.out.println("Cancel button Clicked");
+
+         if (timer != null) {
+            timer.stop();
+        }
+        if (countdownTimeline != null) {
+            countdownTimeline.stop();
+        }
+        secondsRemaining = 5;
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("transport.fxml"));
     root = loader.load();
@@ -71,9 +187,7 @@ public void homedriverHandler(ActionEvent event) throws IOException {
                 writer.write(line);
                 writer.newLine();
             }
-            // Now, append the new booking
-            writer.write("");
-            writer.newLine();
+
 
         }
 

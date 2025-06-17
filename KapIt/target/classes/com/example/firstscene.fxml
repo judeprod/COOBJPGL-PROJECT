@@ -10,9 +10,9 @@
 
 <Pane fx:controller="com.example.firstsceneController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #5e1916;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
-      <Label fx:id="moveitloginsign" layoutX="110.0" layoutY="200.0" text="KAP IT" textFill="WHITE" >
+      <Label fx:id="moveitloginsign" layoutX="103.0" layoutY="170.0" text="Kap iT" textFill="WHITE" >
          <font>
-            <Font name="System Bold" size="33.0" />
+            <Font name="Doom 2016 Text" size="76.0" />
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="335.0" />
