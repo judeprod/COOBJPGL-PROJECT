@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class firstsceneController {
+public class KapItController {
 
     @FXML
     private void switchToLoginpage(ActionEvent event) throws IOException {
