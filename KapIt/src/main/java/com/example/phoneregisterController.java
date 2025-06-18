@@ -24,7 +24,7 @@ public class phoneregisterController {
 
     @FXML // back button 
     public void handleBack(ActionEvent event) throws IOException {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("firstscene.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("KapIt.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
