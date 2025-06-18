@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 public class KapItController {
 
-    @FXML
+    @FXML // log-in button
     private void switchToLoginpage(ActionEvent event) throws IOException {
         //App.setRoot("Loginpage");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Loginpage.fxml"));
@@ -22,7 +22,7 @@ public class KapItController {
                     stage.show();
         }
 
-    @FXML
+    @FXML // registration button
     private void switchToPhoneregister(ActionEvent event) throws IOException {
         //App.setRoot("phoneregister");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("phoneregister.fxml"));

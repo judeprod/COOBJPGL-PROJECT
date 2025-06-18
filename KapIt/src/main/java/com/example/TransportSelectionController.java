@@ -112,7 +112,7 @@ private void goToBookingPage(Location selectedLocation) {
             filterTable(newValue);
         });
     }
-
+    // search bar
     private void filterTable(String keyword) {
         if (keyword == null || keyword.isEmpty()) {
             placestable.setItems(allLocations);

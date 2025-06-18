@@ -15,8 +15,8 @@ public class Location {
     public String getLoc() { return loc; }
     public int getBprice() { return bookingprice; }
     public String getMaps() { return maps; }
-   public String getTitle() {String[] words = loc.split(" ");
-    if (words.length >= 3) {return words[0] + " " + words[1] + " " + words[2];}
+    public String getTitle() {String[] words = loc.split(" "); // gets title of the location
+        if (words.length >= 3) {return words[0] + " " + words[1] + " " + words[2];} // gets first three words from location
             return null;
 }
 

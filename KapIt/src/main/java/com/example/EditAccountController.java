@@ -42,7 +42,7 @@ public class EditAccountController {
     @FXML
     private Label phareacode;
 
-    @FXML
+    @FXML // Method to call for the log-out and delete account button
     private void switchtofKapItpage(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("KapIt.fxml"));
         Parent root = loader.load();
@@ -52,12 +52,13 @@ public class EditAccountController {
         stage.show();
     }
 
-    @FXML
+    @FXML // load accounts.txt and input validation for editing method
     private void initialize() {
         loadAccountInfo();
-        restrictPhoneNumberInput();
+        EditAccountInputValidator();
     }
 
+    // Load account method
     private void loadAccountInfo() {
         User user = LoginpageController.user;
         if (user == null) return;
@@ -77,7 +78,9 @@ public class EditAccountController {
             System.out.println("Error reading account info: " + e.getMessage());
         }
     }
-    private void restrictPhoneNumberInput() {
+    // Input Validation for username, password, and phone number
+
+    private void EditAccountInputValidator() {
         // Only digits in phone number
         Phonenumbertextfield.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
@@ -103,10 +106,11 @@ public class EditAccountController {
         });
     }
 
-    @FXML
+    @FXML // Log-out button
     private void LogoutHandler(ActionEvent event) {
     System.out.println("Logging Out...");
-
+    
+    // Log-out button confirmation
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Log Out");
     alert.setHeaderText("Are you sure?");
@@ -122,7 +126,7 @@ public class EditAccountController {
     }
 }
 
-@FXML
+@FXML // back button 
 private void backbtnaccHandler(ActionEvent event) {
     try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Homepage.fxml"));
@@ -136,7 +140,7 @@ private void backbtnaccHandler(ActionEvent event) {
     }
 }
 
-    @FXML
+    @FXML // delete account button
     private void DeleteAccHandler(ActionEvent event) {
         User user = LoginpageController.user;
         if (user == null) return;
@@ -159,7 +163,7 @@ private void backbtnaccHandler(ActionEvent event) {
             e.printStackTrace();
             return;
         }
-
+        // Removes the characters in the line
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             for (int i = 0; i < updatedLines.size(); i++) {
                 writer.write(updatedLines.get(i));
@@ -171,7 +175,7 @@ private void backbtnaccHandler(ActionEvent event) {
             e.printStackTrace();
             return;
         }
-
+        // shows account deletion confirmation here
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information");
         alert.setHeaderText("Account Deleted");
@@ -186,15 +190,15 @@ private void backbtnaccHandler(ActionEvent event) {
     }
 
 
-     @FXML
+     @FXML // save button 
     private void savebtnHandler(ActionEvent event) {
         User user = LoginpageController.user;
         if (user == null) return;
-
+        //gets new username, password, and phone number
         String newUsername = Newnametextfield.getText().trim();
         String newPassword = Newpasswordtextfield.getText().trim();
         String newPhone = Phonenumbertextfield.getText().trim();
-
+             // Alert for missing inputs in text fields
             if (!newUsername.matches("[a-zA-Z ]{3,30}")) {
             showAlert("Invalid Name", "Name should only contain letters and spaces", "Character length must be 3 to 30.");
             return;
@@ -215,6 +219,7 @@ private void backbtnaccHandler(ActionEvent event) {
             return;
         }
 
+        //retrieves the new updated values
         String targetUsername = user.getUsername();
         List<String> updatedLines = new ArrayList<>();
 
@@ -232,7 +237,7 @@ private void backbtnaccHandler(ActionEvent event) {
             e.printStackTrace();
             return;
         }
-
+        // rewrites the update here
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Accounts.txt"))) {
             for (int i = 0; i < updatedLines.size(); i++) {
                 writer.write(updatedLines.get(i));
@@ -244,14 +249,14 @@ private void backbtnaccHandler(ActionEvent event) {
             e.printStackTrace();
             return;
         }
-
+        // saved confirmation
         user.setUsername(newUsername);
         user.setPassword(newPassword);
         user.setPhone(newPhone);
 
         showAlert("Success", "Account updated successfully.", "");
     }
-
+    // avoids repeated alert box 
     private void showAlert(String title, String header, String content) {
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle(title);

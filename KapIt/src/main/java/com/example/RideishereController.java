@@ -4,10 +4,8 @@ import java.io.IOException;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,7 +14,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class RideishereController {
-
+    // value of the countdown
     private int secondsRemaining = 7; 
     private Timeline countdownTimeline;
     @FXML
@@ -25,12 +23,12 @@ public class RideishereController {
     @FXML
     Button homebutton;
 
-
+    
     public void setDropoffLocation(String location) {
         locationLabel.setText(location);
     }
 
-    @FXML
+    @FXML // countdown for trip completed page
     public void initialize() {
     startTerminalCountdownAndSwitch();
     javafx.animation.PauseTransition delay = new javafx.animation.PauseTransition(javafx.util.Duration.seconds(7));
@@ -52,7 +50,7 @@ public class RideishereController {
         countdownTimeline.setCycleCount(secondsRemaining + 1);
         countdownTimeline.play();
     }
-
+    // loader for booking completed page
     private void switchToBookingCompleted() {
     try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("bookingcompleted.fxml"));

@@ -17,7 +17,7 @@ public class HomepageController {
 @FXML
 private Button ActivityCenterButton;
 
-@FXML
+@FXML // activity center button
 private void Activitycenterhandle(ActionEvent event) throws IOException {
     System.out.println("Activity Center Button Clicked");
     FXMLLoader loader = new FXMLLoader(getClass().getResource("Activitycenter.fxml"));
@@ -27,7 +27,7 @@ stage.setScene(new Scene(root));
 stage.show();
 }
 
-@FXML
+@FXML // transport page button
 private void MotoTaxiButtonHandler(ActionEvent event) throws IOException { 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("transport.fxml"));
         Parent root = loader.load();
@@ -35,7 +35,7 @@ private void MotoTaxiButtonHandler(ActionEvent event) throws IOException {
                 stage.setScene(new Scene(root));
                     stage.show();
 }
-@FXML
+@FXML // edit account button
 private void AccountButtonHandler(ActionEvent event) throws IOException { 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("editaccount.fxml"));
         Parent root = loader.load();

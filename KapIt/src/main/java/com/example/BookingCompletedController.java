@@ -1,21 +1,20 @@
 package com.example;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-
-import java.io.IOException;
 
 public class BookingCompletedController {
 
     
 
-    @FXML
+    @FXML // home button after booking completion
     private void bookingcbtnHandler(ActionEvent event) {
     System.out.println("Home button is clicked");
     try {
