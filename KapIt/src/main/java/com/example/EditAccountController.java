@@ -42,7 +42,7 @@ public class EditAccountController {
     @FXML
     private Label phareacode;
 
-    @FXML // Method to call for the log-out and delete account button
+    @FXML // Method for the log-out and delete account button
     private void switchtofKapItpage(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("KapIt.fxml"));
         Parent root = loader.load();
@@ -78,8 +78,8 @@ public class EditAccountController {
             System.out.println("Error reading account info: " + e.getMessage());
         }
     }
+    
     // Input Validation for username, password, and phone number
-
     private void EditAccountInputValidator() {
         // Only digits in phone number
         Phonenumbertextfield.textProperty().addListener((observable, oldValue, newValue) -> {
